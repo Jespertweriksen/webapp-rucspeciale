@@ -10,8 +10,28 @@ namespace webapp_rucspeciale.Models
    
 
         ///<summary>
-        /// Gets or sets Gender.
+        /// Gets or sets Id.
+        ///</summary>
+        public int Id { get; set; }
+
+        ///<summary>
+        /// Gets or sets Email.
         ///</summary>
         public string Email { get; set; }
+
+        ///<summary>
+        /// Gets or sets Name.
+        ///</summary>
+        public string Name { get; set; }
+
+        public bool Empty
+        {
+            get
+            {
+                return (Id == 0 &&
+                        string.IsNullOrWhiteSpace(Email) &&
+                        string.IsNullOrWhiteSpace(Name));
+            }
+        }
     }
 }

@@ -100,7 +100,6 @@ C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.RazorTargetAssemblyInfo.cache
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.RazorTargetAssemblyInfo.cs
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.Views.pdb
@@ -108,3 +107,6 @@ C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webap
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.dll
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.pdb
 C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\webapp-rucspeciale.genruntimeconfig.cache
+C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\Shared\UserCreation.cshtml.g.cs
+C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CreateBooking.cshtml.g.cs
+C:\Users\jtw\Documents\Projects\webapp-rucspeciale\obj\Debug\netcoreapp3.1\Razor\_ViewStart.cshtml.g.cs

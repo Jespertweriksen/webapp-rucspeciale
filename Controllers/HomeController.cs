@@ -36,17 +36,22 @@ namespace webapp_rucspeciale.Controllers
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
-                        // Do something...
+                        Debug.WriteLine(httpResponseMessage.Content.ReadAsStringAsync().Result);
+                    }
+
+                    if (httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
+                    {
+                        return View(person);
                     }
                 }
                 catch (OperationCanceledException) { }
             }
-            return View();
+            return View(person);
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(new UserModel());
         }
 
         public IActionResult Privacy()
