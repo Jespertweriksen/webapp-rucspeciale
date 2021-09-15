@@ -4,7 +4,7 @@
 @model UserModel;
 @{
 
-    if (Model.Empty)
+    if (Model.Name == null)
     {
         await Html.RenderPartialAsync("CreateBooking");
     }
@@ -28,7 +28,8 @@
         <tr>
             <td>Email: </td>
             <td>
-                @Html.TextBoxFor(m => m.StatusMessage)
+                <p>@Html.TextBoxFor(m => m.StatusMessage)</p>
+                
             </td>
         </tr>
     </table>

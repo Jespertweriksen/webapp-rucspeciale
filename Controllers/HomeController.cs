@@ -22,12 +22,15 @@ namespace webapp_rucspeciale.Controllers
         {
             _logger = logger;
         }
-
+        
 
         [HttpPost]
         public async Task<ActionResult> IndexAsync(UserModel person)
         {
             string email = person.Email;
+            String[] parts = email.Split(new[] { '@' });
+            String username = parts[0]; // "hello"
+
             using (var client = new HttpClient())
             {
                 try
@@ -36,6 +39,7 @@ namespace webapp_rucspeciale.Controllers
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
+                        person.Name = username;
                         person.StatusMessage = httpResponseMessage.Content.ReadAsStringAsync().Result;
                         Debug.WriteLine(httpResponseMessage.Content.ReadAsStringAsync().Result);
                     }
@@ -47,7 +51,7 @@ namespace webapp_rucspeciale.Controllers
                     }
                 }
                 catch (OperationCanceledException) { }
-            }
+            } 
             return View(person);
         }
 
