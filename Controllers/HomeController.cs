@@ -28,17 +28,11 @@ namespace webapp_rucspeciale.Controllers
         public async Task<ActionResult> IndexAsync(UserModel person)
         {
             string email = person.Email;
-
-            var values = new Dictionary<string, string>();
-            values.Add("email", email);
-            var content = new StringContent("email?=" + email, Encoding.UTF8, "application/x-www-form-urlencoded");
-            Debug.WriteLine(content.ReadAsStringAsync().Result);
-
             using (var client = new HttpClient())
             {
                 try
                 {
-                    var httpResponseMessage = await client.PostAsync("http://localhost:7071", content);
+                    var httpResponseMessage = await client.PostAsync("http://localhost:7071/api/CreateBooking?email=" + email, null);
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
@@ -47,25 +41,6 @@ namespace webapp_rucspeciale.Controllers
                 }
                 catch (OperationCanceledException) { }
             }
-
-            /*
-            using (HttpClient httpClient = new HttpClient { BaseAddress = uri1 })
-            {
-
-                var values = new Dictionary<string, string>();
-                values.Add("email", email);
-                var content = new FormUrlEncodedContent(values);
-
-                string uri = "/api/CreateBooking";
-                var response = httpClient.PostAsync(uri, content).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    Console.Write("Success");
-                }
-                else
-                    Console.Write("Error");
-
-            }*/
             return View();
         }
 
