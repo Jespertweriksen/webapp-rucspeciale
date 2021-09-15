@@ -36,11 +36,13 @@ namespace webapp_rucspeciale.Controllers
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
+                        person.StatusMessage = httpResponseMessage.Content.ReadAsStringAsync().Result;
                         Debug.WriteLine(httpResponseMessage.Content.ReadAsStringAsync().Result);
                     }
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
                     {
+                        person.StatusMessage = httpResponseMessage.Content.ReadAsStringAsync().Result;
                         return View(person);
                     }
                 }
