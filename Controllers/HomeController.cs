@@ -84,7 +84,7 @@ namespace webapp_rucspeciale.Controllers
             session.SetString("Placement", Placement);
             Debug.WriteLine("Placement " + Placement);
 
-            return View("Calender", reservationViewModel);
+            return View("Placement", reservationViewModel);
         }
 
 
