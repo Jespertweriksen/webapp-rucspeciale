@@ -11,25 +11,30 @@ using webapp_rucspeciale.Models;
 using Newtonsoft.Json;
 using System.Net;
 using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace webapp_rucspeciale.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ISession session;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
+            this.session = httpContextAccessor.HttpContext.Session;
         }
-        
+
 
         [HttpPost]
         public async Task<ActionResult> IndexAsync(UserModel person)
         {
             string email = person.Email;
             String[] parts = email.Split(new[] { '@' });
-            String username = parts[0]; // "hello"
+            String username = parts[0];
+
+
 
             using (var client = new HttpClient())
             {
@@ -40,24 +45,59 @@ namespace webapp_rucspeciale.Controllers
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
                         person.Name = username;
-                        person.StatusMessage = httpResponseMessage.Content.ReadAsStringAsync().Result;
-                        Debug.WriteLine(httpResponseMessage.Content.ReadAsStringAsync().Result);
+                        return View(person);
                     }
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
                     {
-                        person.StatusMessage = httpResponseMessage.Content.ReadAsStringAsync().Result;
-                        return View(person);
+                        return View("CreateUser", person);
                     }
                 }
                 catch (OperationCanceledException) { }
-            } 
+            }
             return View(person);
         }
 
-        public IActionResult Index()
+        
+        [HttpPost]
+        public ActionResult AmountOfGuests(ReservationViewModel reservationViewModel)
         {
-            return View(new UserModel());
+            var amountofguests = reservationViewModel.AmountOfGuests;
+            Debug.WriteLine("Amount of Guests: " + amountofguests);
+            session.SetInt32("AmountOfGuests", (int)amountofguests);
+            
+
+            reservationViewModel.AvailablePlacements.Add("Bord indendørs til spisning");
+            reservationViewModel.AvailablePlacements.Add("Høje stole i baren/ akvariet");
+            reservationViewModel.AvailablePlacements.Add("Udendørs til spisning");
+
+            //Debug.WriteLine(reservationViewModel.AmountOfGuests);
+            return View("Placement", reservationViewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult Placement(ReservationViewModel reservationViewModel, string Placement)
+        {
+            reservationViewModel.ChosenPlacement = Placement;
+            reservationViewModel.AmountOfGuests = session.GetInt32("AmountOfGuests");
+            session.SetString("Placement", Placement);
+            Debug.WriteLine("Placement " + Placement);
+
+            return View("Calender", reservationViewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult Calender(ReservationViewModel reservationViewModel)
+        {
+     
+            return View("Calender", reservationViewModel);
+        }
+
+        public IActionResult Index(ReservationViewModel reservationViewModel)
+        {
+            return View("GuestAmount", reservationViewModel);
         }
 
         public IActionResult Privacy()

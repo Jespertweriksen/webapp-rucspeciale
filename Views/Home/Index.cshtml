@@ -3,15 +3,7 @@
 }
 @model UserModel;
 @{
-
-    if (Model.Name == null)
-    {
-        await Html.RenderPartialAsync("CreateBooking");
-    }
-    else
-    {
-        await Html.RenderPartialAsync("UserCreation");
-    }
+  
 
 }
 
@@ -29,7 +21,7 @@
             <td>Email: </td>
             <td>
                 <p>@Html.TextBoxFor(m => m.StatusMessage)</p>
-                
+
             </td>
         </tr>
     </table>
