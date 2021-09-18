@@ -28,11 +28,10 @@ namespace webapp_rucspeciale.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> IndexAsync(UserModel person)
+        public async Task<ActionResult> CreateBooking(UserModel person, ReservationViewModel reservationViewModel)
         {
             string email = person.Email;
-            String[] parts = email.Split(new[] { '@' });
-            String username = parts[0];
+           
 
 
 
@@ -41,15 +40,16 @@ namespace webapp_rucspeciale.Controllers
                 try
                 {
                     var httpResponseMessage = await client.PostAsync("http://localhost:7071/api/CreateBooking?email=" + email, null);
-
+                   
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
-                        person.Name = username;
-                        return View(person);
+                        //OKAY - WE GET USER INFO FROM DB
+                        return View("CreateBooking", person);
                     }
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
                     {
+                        //WE NEED MORE INFO FROM USER
                         return View("CreateUser", person);
                     }
                 }
@@ -60,7 +60,7 @@ namespace webapp_rucspeciale.Controllers
 
         
         [HttpPost]
-        public ActionResult AmountOfGuests(ReservationViewModel reservationViewModel)
+        public ActionResult Placement(ReservationViewModel reservationViewModel)
         {
             var amountofguests = reservationViewModel.AmountOfGuests;
             Debug.WriteLine("Amount of Guests: " + amountofguests);
@@ -76,24 +76,19 @@ namespace webapp_rucspeciale.Controllers
         }
 
 
+
         [HttpPost]
-        public ActionResult Placement(ReservationViewModel reservationViewModel, string Placement)
+        public ActionResult Calender(ReservationViewModel reservationViewModel, string Placement)
         {
             reservationViewModel.ChosenPlacement = Placement;
             reservationViewModel.AmountOfGuests = session.GetInt32("AmountOfGuests");
             session.SetString("Placement", Placement);
             Debug.WriteLine("Placement " + Placement);
 
-            return View("Placement", reservationViewModel);
-        }
-
-
-        [HttpPost]
-        public ActionResult Calender(ReservationViewModel reservationViewModel)
-        {
-     
             return View("Calender", reservationViewModel);
         }
+
+
 
         public IActionResult Index(ReservationViewModel reservationViewModel)
         {

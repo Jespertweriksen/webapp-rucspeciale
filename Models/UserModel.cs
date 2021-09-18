@@ -24,6 +24,8 @@ namespace webapp_rucspeciale.Models
         ///</summary>
         public string Name { get; set; }
 
+        public long Phone { get; set; }
+
         public string StatusMessage { get; set; }
 
         public bool Empty
