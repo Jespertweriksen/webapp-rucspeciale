@@ -7738,20 +7738,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jjfiv\\.nuget\\packages\\": {}
+    "C:\\Users\\Jesper\\.nuget\\packages\\": {},
+    "E:\\Programmer\\Microsoft Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Programmer\\Drive\\Dropbox\\RUC\\Kandidat\\CS_Speciale\\RUCSpeciale\\webapp-rucspeciale\\webapp-rucspeciale.csproj",
+      "projectUniqueName": "C:\\Users\\Jesper\\Documents\\Projekter\\webapp-rucspeciale\\webapp-rucspeciale\\webapp-rucspeciale.csproj",
       "projectName": "webapp-rucspeciale",
-      "projectPath": "G:\\Programmer\\Drive\\Dropbox\\RUC\\Kandidat\\CS_Speciale\\RUCSpeciale\\webapp-rucspeciale\\webapp-rucspeciale.csproj",
-      "packagesPath": "C:\\Users\\jjfiv\\.nuget\\packages\\",
-      "outputPath": "G:\\Programmer\\Drive\\Dropbox\\RUC\\Kandidat\\CS_Speciale\\RUCSpeciale\\webapp-rucspeciale\\obj\\",
+      "projectPath": "C:\\Users\\Jesper\\Documents\\Projekter\\webapp-rucspeciale\\webapp-rucspeciale\\webapp-rucspeciale.csproj",
+      "packagesPath": "C:\\Users\\Jesper\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jesper\\Documents\\Projekter\\webapp-rucspeciale\\webapp-rucspeciale\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Programmer\\Microsoft Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jjfiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Jesper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -7813,16 +7821,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.18, 3.1.18]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7831,7 +7829,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21458.32\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

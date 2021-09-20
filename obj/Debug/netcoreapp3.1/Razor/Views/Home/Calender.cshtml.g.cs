@@ -26,8 +26,8 @@ using webapp_rucspeciale.Models;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bc7109e2da09fb6b2c630c5ddc345de5eee4f516", @"/Views/Home/Calender.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6029074805289a9e34168d06f1d0d62766e4bb1d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5280f42d2456b5d8f93edc617902d0b73caab363", @"/Views/Home/Calender.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a8e3c4eb7ce23eda2c606dab076b955a7c8f8581", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Calender : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<webapp_rucspeciale.Models.ReservationViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,7 +64,7 @@ using webapp_rucspeciale.Models;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            WriteLiteral("\n");
+            WriteLiteral("\r\n");
 #nullable restore
 #line 3 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
   
@@ -114,11 +114,11 @@ using webapp_rucspeciale.Models;
 
     ::placeholder {
         color: #fff;
-        opacity: 1
+    ");
+            WriteLiteral(@"    opacity: 1
     }
 
-    :-ms-input-plac");
-            WriteLiteral(@"eholder {
+    :-ms-input-placeholder {
         color: #fff
     }
 
@@ -165,11 +165,11 @@ using webapp_rucspeciale.Models;
         .new-day:hover,
         .month:hover,
         .year:hover,
-        .decade:hover,
+        ");
+            WriteLiteral(@".decade:hover,
         .century:hover {
             border-radius: 6px !important;
-        ");
-            WriteLiteral(@"    background-color: #eee;
+            background-color: #eee;
             color: #000
         }
 
@@ -212,15 +212,15 @@ using webapp_rucspeciale.Models;
         }
 
         .cell.select {
-            background-color: #3D5AFE;
+       ");
+            WriteLiteral(@"     background-color: #3D5AFE;
             color: #fff
         }
 
     .fa-calendar {
         color: #fff;
         font-size: 30px;
-     ");
-            WriteLiteral(@"   padding-top: 8px;
+        padding-top: 8px;
         padding-left: 5px;
         cursor: pointer
     }
@@ -273,9 +273,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                             <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">9:45AM</div>
                             </div>
-                            <div class=""col-md-2 col-4 my-1 px-2"">
-          ");
-                WriteLiteral(@"                      <div class=""cell py-1"">10:00AM</div>
+                            <div class=""col-md-2 col-4 my-1 px");
+                WriteLiteral(@"-2"">
+                                <div class=""cell py-1"">10:00AM</div>
                             </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">10:30AM</div>
@@ -292,9 +292,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                                 <div class=""cell py-1"">11:30AM</div>
                             </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
-                                <div class=""cell py-1"">11:45AM</div>
-                    ");
-                WriteLiteral(@"        </div>
+                                <div class=""cell py-1"">1");
+                WriteLiteral(@"1:45AM</div>
+                            </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">12:00PM</div>
                             </div>
@@ -312,8 +312,8 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                             <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">1:30PM</div>
                             </div>
-                            <div class=""col-md-2 col-4 my-1 px-2"">");
-                WriteLiteral(@"
+              ");
+                WriteLiteral(@"              <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">1:45PM</div>
                             </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
@@ -331,9 +331,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                                 <div class=""cell py-1"">3:00PM</div>
                             </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
-                                <div class=""cell py-1"">3:30PM</div>
-               ");
-                WriteLiteral(@"             </div>
+             ");
+                WriteLiteral(@"                   <div class=""cell py-1"">3:30PM</div>
+                            </div>
                             <div class=""col-md-2 col-4 my-1 px-2"">
                                 <div class=""cell py-1"">4:15PM</div>
                             </div>
@@ -362,7 +362,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\n             \n            </div>\n        </div>\n    </div>\n</div>\n\n<div>\n    <h4>ReservationViewModel</h4>\n    <hr />\n    <dl class=\"row\">\n        <dt class=\"col-sm-2\">\n            ");
+            WriteLiteral("\r\n             \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div>\r\n    <h4>ReservationViewModel</h4>\r\n    <hr />\r\n    <dl class=\"row\">\r\n        <dt class=\"col-sm-2\">\r\n            ");
 #nullable restore
 #line 260 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
        Write(Html.DisplayNameFor(model => model.ChosenPlacement));
@@ -370,7 +370,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\n        </dt>\n        <dd class=\"col-sm-10\">\n            ");
+            WriteLiteral("\r\n        </dt>\r\n        <dd class=\"col-sm-10\">\r\n            ");
 #nullable restore
 #line 263 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
        Write(Html.DisplayFor(model => model.ChosenPlacement));
@@ -378,7 +378,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\n        </dd>\n        <dt class=\"col-sm-2\">\n            ");
+            WriteLiteral("\r\n        </dd>\r\n        <dt class=\"col-sm-2\">\r\n            ");
 #nullable restore
 #line 266 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
        Write(Html.DisplayNameFor(model => model.AmountOfGuests));
@@ -386,7 +386,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\n        </dt>\n        <dd class=\"col-sm-10\">\n            ");
+            WriteLiteral("\r\n        </dt>\r\n        <dd class=\"col-sm-10\">\r\n            ");
 #nullable restore
 #line 269 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
        Write(Html.DisplayFor(model => model.AmountOfGuests));
@@ -394,7 +394,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\n        </dd>\n\n    </dl>\n</div>\n<div>\n    ");
+            WriteLiteral("\r\n        </dd>\r\n\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
 #nullable restore
 #line 275 "C:\Users\Jesper\Documents\Projekter\webapp-rucspeciale\webapp-rucspeciale\Views\Home\Calender.cshtml"
 Write(Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }));
