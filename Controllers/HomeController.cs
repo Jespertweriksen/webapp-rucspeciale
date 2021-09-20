@@ -27,6 +27,12 @@ namespace webapp_rucspeciale.Controllers
             this.session = httpContextAccessor.HttpContext.Session;
         }
 
+        public class UserReservation
+        {
+            public UserModel User { get; set; }
+            public ReservationViewModel reservation { get; set; }
+        }
+
 
         [HttpPost]
         public async Task<ActionResult> CreateBooking(UserModel person, ReservationViewModel reservationViewModel)
@@ -51,7 +57,7 @@ namespace webapp_rucspeciale.Controllers
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
                         //OKAY - WE GET USER INFO FROM DB
-                        return View("CreateBooking", person);
+                        return View("Confirmation", new UserReservation() {User = person, reservation = reservationViewModel } );
                     }
 
                     if (httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
