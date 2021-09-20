@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Web;
 using Microsoft.AspNetCore.Http;
+using System.Dynamic;
 
 namespace webapp_rucspeciale.Controllers
 {
@@ -31,7 +32,12 @@ namespace webapp_rucspeciale.Controllers
         public async Task<ActionResult> CreateBooking(UserModel person, ReservationViewModel reservationViewModel)
         {
             string email = person.Email;
-           
+
+            string First_Name = person.First_Name;
+            string Last_Name = person.Last_Name;
+            int Postal = person.Postal;
+            int Phone = person.Phone;
+
 
 
 
@@ -39,8 +45,9 @@ namespace webapp_rucspeciale.Controllers
             {
                 try
                 {
-                    var httpResponseMessage = await client.PostAsync("http://localhost:7071/api/CreateBooking?email=" + email, null);
-                   
+                  
+                    var httpResponseMessage = await client.PostAsync("http://localhost:7071/api/UserHandler?email=" + email + "&first_name=" + First_Name + "&last_name=" + Last_Name +  "&phone=" + Phone + "&postal=" + Postal,null);
+
                     if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
                         //OKAY - WE GET USER INFO FROM DB
@@ -58,14 +65,20 @@ namespace webapp_rucspeciale.Controllers
             return View(person);
         }
 
-        
+        [HttpPost]
+        public ActionResult UserHandler(UserModel person, ReservationViewModel reservationViewModel)
+        {
+            return View("CreateBooking");
+        }
+
+
         [HttpPost]
         public ActionResult Placement(ReservationViewModel reservationViewModel)
         {
             var amountofguests = reservationViewModel.AmountOfGuests;
             Debug.WriteLine("Amount of Guests: " + amountofguests);
             session.SetInt32("AmountOfGuests", (int)amountofguests);
-            
+
 
             reservationViewModel.AvailablePlacements.Add("Bord indendørs til spisning");
             reservationViewModel.AvailablePlacements.Add("Høje stole i baren/ akvariet");

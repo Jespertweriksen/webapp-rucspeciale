@@ -22,9 +22,12 @@ namespace webapp_rucspeciale.Models
         ///<summary>
         /// Gets or sets Name.
         ///</summary>
-        public string Name { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
 
-        public long Phone { get; set; }
+        public int Postal { get; set; }
+
+        public int Phone { get; set; }
 
         public string StatusMessage { get; set; }
 
@@ -34,7 +37,7 @@ namespace webapp_rucspeciale.Models
             {
                 return (Id == 0 &&
                         string.IsNullOrWhiteSpace(Email) &&
-                        string.IsNullOrWhiteSpace(Name));
+                        string.IsNullOrWhiteSpace(First_Name));
             }
         }
     }
